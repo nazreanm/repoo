@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2024.06.08_add_table_tasks_users" author="Murad Karimov">
+        <createTable schemaName="public" tableName="tasks_users">
+            <column name="user_id" type="int"/>
+            <column name="task_id" type="int"/>
+        </createTable>
+
+        <addForeignKeyConstraint  baseColumnNames="tasks_users"
+                                  baseTableName="id"
+                                  baseTableSchemaName="public"
+                                  constraintName="FK_task_id"
+                                  onDelete="CASCADE"
+                                  onUpdate="CASCADE"
+                                  referencedColumnNames="task_id"
+                                  referencedTableName="tasks"
+                                  referencedTableSchemaName="public"/>
+        <addForeignKeyConstraint  baseColumnNames="tasks_users"
+                                  baseTableName="id"
+                                  baseTableSchemaName="public"
+                                  constraintName="FK_user_id"
+                                  onDelete="CASCADE"
+                                  onUpdate="CASCADE"
+                                  referencedColumnNames="user_id"
+                                  referencedTableName="users"
+                                  referencedTableSchemaName="public"/>
+
+
+    </changeSet>
+
+</databaseChangeLog>

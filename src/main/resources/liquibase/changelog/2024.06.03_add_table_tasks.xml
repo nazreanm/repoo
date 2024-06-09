@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2024.06.08_add_table_tasks" author="Murad Karimov">
+        <createTable schemaName="public" tableName="tasks">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="descriptiom" type="varchar(255)"/>
+            <column name="taskStatus" type="int"/>
+            <column name="taskPriority" type="int"/>
+            <column name="point" type="int"/>
+            <column name="deadline" type="date"/>
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
